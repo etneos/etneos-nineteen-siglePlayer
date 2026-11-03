@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --blue: #000078;
+  --green: #38f032;
+  --orange: #ff9f1c;
+  --white: #f5f5f5;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--blue);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--white);
+  font-family: "Times New Roman", Times, serif;
+  background-color: var(--blue);
+  background-image: url("../img/sfondoOk.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  width: min(100%, 900px);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: max(12px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  position: relative;
+  z-index: 5;
+  min-height: 52px;
+}
+
+.menu {
+  position: relative;
+  width: 100%;
+}
+
+.menu-toggle {
+  width: 48px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 8px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.menu-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.menu-toggle__line {
+  display: block;
+  width: 34px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--white);
+}
+
+.menu-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  width: min(82vw, 280px);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 12px;
+  background: rgb(0 0 70 / 96%);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+}
+
+.menu-panel ul {
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.menu-link {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font: italic 1.15rem "Times New Roman", Times, serif;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-link:hover,
+.menu-link:focus-visible {
+  outline: none;
+  background: var(--orange);
+  color: #fff;
+}
+
+.menu-link--small {
+  font-size: 1rem;
+}
+
+.menu-divider {
+  height: 1px;
+  margin: 6px 24px;
+  background: rgb(56 240 50 / 70%);
+}
+
+.hero {
+  width: 100%;
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 3vh, 24px);
+}
+
+.hero-art {
+  width: min(100%, 700px);
+  aspect-ratio: 700 / 550;
+  background: url("../img/home_smart5.png") center / contain no-repeat;
+}
+
+.play-link {
+  min-height: 48px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 999px;
+  background: var(--blue);
+  color: var(--green);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 25%);
+}
+
+.play-link:hover,
+.play-link:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+  background: var(--orange);
+  color: #fff;
+}
+
+.social {
+  margin: clamp(22px, 5vh, 42px) auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 24px);
+}
+
+.social a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+.social img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font: 700 0.85rem cursive;
+}
+
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.about-dialog {
+  width: min(90vw, 620px);
+  max-height: min(80vh, 680px);
+  padding: 34px clamp(20px, 5vw, 40px) 28px;
+  overflow: auto;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 16px;
+  background: rgb(0 0 35 / 96%);
+  color: var(--white);
+  font-size: clamp(1rem, 3.8vw, 1.25rem);
+  line-height: 1.55;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 50%);
+}
+
+.about-dialog::backdrop {
+  background: rgb(0 0 0 / 72%);
+  backdrop-filter: blur(2px);
+}
+
+.about-dialog h1 {
+  margin: 0 42px 16px 0;
+  color: var(--green);
+  font-size: 1.5em;
+}
+
+.about-dialog p {
+  margin: 0 0 14px;
+}
+
+.about-dialog .proverb {
+  margin-top: 20px;
+  color: var(--orange);
+  font-style: italic;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dialog-close:hover,
+.dialog-close:focus-visible {
+  outline: 2px solid var(--white);
+  background: var(--orange);
+}
+
+@media (min-width: 700px) {
+  .page {
+    padding-inline: 24px;
+  }
+
+  .hero {
+    margin-top: 12px;
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .page {
+    min-height: 100svh;
+  }
+
+  .hero {
+    margin-top: 0;
+    gap: 8px;
+  }
+
+  .hero-art {
+    width: min(72vw, 440px);
+  }
+
+  .play-link {
+    min-height: 42px;
+    padding-block: 8px;
+  }
+
+  .social {
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-panel,
+  .about-dialog {
+    animation: appear 140ms ease-out;
+  }
+
+  @keyframes appear {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
