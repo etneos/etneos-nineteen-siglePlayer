@@ -436,3 +436,12 @@
     font-size: 16px;
   }
 }
+
+/* Scale the card-back artwork with the compact card dimensions, keeping it fully visible. */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 900px) {
+  .retro {
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
