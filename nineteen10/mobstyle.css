@@ -296,3 +296,107 @@
   /*z-index: 1; */
   content: url("img/retrok.png");
 }
+
+/* Compact portrait layout for short phone screens: keep the You hand visible. */
+@media (max-width: 600px) and (orientation: portrait) and (max-height: 900px) {
+  #sfondoVerde {
+    margin-top: 12vh;
+    margin-left: 8%;
+    width: 84%;
+    height: 76vh;
+  }
+
+  body > table[height="15%"] {
+    height: 10vh;
+    margin: 0;
+  }
+
+  body > table[height="60%"] {
+    height: 52vh;
+    margin: 0;
+  }
+
+  body > table[height="20%"] {
+    height: 28vh;
+    margin: 0;
+  }
+
+  #lgtd > br,
+  #rgtd > br,
+  #youtd > br {
+    display: none;
+  }
+
+  #Player1 br,
+  #Player3 br {
+    display: none;
+  }
+
+  #Player1 .retro,
+  #Player3 .retro {
+    display: block;
+    width: 44px;
+    height: 66px;
+    margin: 2px auto;
+  }
+
+  #Player2 .retro {
+    width: 46px;
+    height: 69px;
+  }
+
+  #lgtd,
+  #rgtd {
+    vertical-align: middle;
+  }
+
+  #panno {
+    margin: 0 auto;
+    transform: scale(0.82);
+    transform-origin: center center;
+  }
+
+  #retroround {
+    width: 55px;
+    height: 83px;
+    margin-left: 25%;
+  }
+
+  #round {
+    width: 53px;
+    height: 81px;
+    margin-top: -35px;
+    margin-left: 12%;
+  }
+
+  #mazzos,
+  .retros,
+  #youestraz {
+    width: 52px;
+    height: 78px;
+  }
+
+  #logos {
+    width: 100px;
+    height: 23px;
+    background-size: contain;
+  }
+
+  #youtd img[name^="plx"] {
+    width: 62px !important;
+    height: 83px !important;
+    margin: 2px;
+  }
+
+  #YOU {
+    position: static !important;
+    display: block;
+    margin: 2px auto !important;
+    font-size: 18px;
+  }
+
+  .plname,
+  .plname2 {
+    font-size: 18px;
+  }
+}
